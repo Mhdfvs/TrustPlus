@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* --------------------
+   Theme variables
+-------------------- */
+@theme {
+  --color-background: hsl(0 0% 98%);
+  --color-foreground: hsl(240 10% 5%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(240 10% 5%);
+  --color-primary: hsl(220 80% 56%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(240 5% 96%);
+  --color-secondary-foreground: hsl(240 10% 10%);
+  --color-accent: hsl(160 84% 39%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 72% 50%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(240 5% 90%);
+  --color-input: hsl(240 5% 90%);
+  --color-ring: hsl(220 80% 56%);
+  --radius: 0.5rem;
+}
+
+/* Dark theme override */
+@theme .dark {
+  --color-background: hsl(240 10% 5%);
+  --color-foreground: hsl(0 0% 98%);
+  --color-card: hsl(240 8% 12%);
+  --color-card-foreground: hsl(0 0% 98%);
+  --color-primary: hsl(220 80% 60%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(240 6% 20%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+  --color-accent: hsl(160 65% 45%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 65% 40%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-border: hsl(240 6% 20%);
+  --color-input: hsl(240 6% 20%);
+  --color-ring: hsl(220 80% 60%);
+}
+
+/* --------------------
+   Base styles
+-------------------- */
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  button {
+    @apply px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-4 rounded-md font-medium transition-colors shadow-sm;
+  }
+
+  input {
+    @apply w-full px-4 py-3 sm:py-3 md:py-4 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition bg-white dark:bg-gray-700 text-foreground dark:text-card-foreground placeholder-gray-400 dark:placeholder-gray-300;
+  }
+
+  .card {
+    @apply w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-card text-card-foreground rounded-2xl shadow-xl p-6 sm:p-8 md:p-10 border border-border dark:border-gray-700/40;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-blue-600;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-gray-300;
+  }
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-green-600;
+  }
+  .btn-destructive {
+    @apply bg-destructive text-destructive-foreground hover:bg-red-600;
+  }
+}
